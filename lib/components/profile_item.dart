@@ -9,19 +9,19 @@ class ProfileItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16),
-      margin: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+      margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
-        border: Border.all(width: 1, color: IOColors.success400),
-        borderRadius: BorderRadius.circular(16),
+        border: Border.all(width: 1, color: IOColors.border400),
+        borderRadius: BorderRadius.circular(14),
       ),
       child: Row(
         children: [
           icon,
-          SizedBox(width: 20),
-          Text(text, style: TextStyle(fontSize: 20)),
+          SizedBox(width: 15),
+          Text(text, style: TextStyle(fontSize: 16)),
           Spacer(),
-          Icon(Icons.arrow_right),
+          Icon(Icons.keyboard_arrow_right),
         ],
       ),
     );

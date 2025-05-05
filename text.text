@@ -1,36 +1,24 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_application_2/theme/io_colors.dart';
-
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
+Column(
       children: [
-        Image.asset('assets/images/login_backgound_image.png'),
-        Positioned(
-          top: 200,
-          left: 100,
-          right: 100,
-          child: Column(
-            children: [
-              Image.asset('assets/images/logo_with_text.png'),
-              Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(color: IOColors.primary500),
-              ),
-              Text('data'),
-            ],
-          ),
+        ProfileItem(
+          icon: Icon(Icons.groups, size: 32, color: IOColors.icon400),
+          text: 'Team info',
+        ),
+        ProfileItem(
+          icon: Icon(Icons.settings, size: 32, color: IOColors.icon400),
+          text: 'Settings',
+        ),
+        ProfileItem(
+          icon: Icon(Icons.emoji_events, size: 32, color: IOColors.icon400),
+          text: 'Rank',
+        ),
+        ProfileItem(
+          icon: Icon(Icons.delete, size: 32, color: IOColors.icon400),
+          text: 'Delete account',
+        ),
+        ProfileItem(
+          icon: Icon(Icons.logout, size: 32, color: IOColors.iconRed500),
+          text: 'Log Out',
         ),
       ],
     );
-  }
-}

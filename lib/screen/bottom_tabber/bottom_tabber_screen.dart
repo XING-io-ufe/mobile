@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/screen/home/home_screen.dart';
-import 'package:flutter_application_2/screen/login/login_screen.dart';
 import 'package:flutter_application_2/screen/profile/profile_screen.dart';
-import 'package:flutter_application_2/screen/tournament/tournament_detail_screen.dart';
+import 'package:flutter_application_2/theme/io_colors.dart' as color;
+// import 'package:flutter_application_2/screen/tournament/tournament_detail_screen.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
   const BottomNavigationBarExample({super.key});
@@ -17,9 +17,8 @@ class _BottomNavigationBarExampleState
   int _selectedIndex = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    LoginScreen(),
     ProfileScreen(),
-    TournamentDetailPage(),
+    // TournamentDetailPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -35,16 +34,14 @@ class _BottomNavigationBarExampleState
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.login), label: 'Login'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Tournament',
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.sports_esports),
+          //   label: 'Tournament',
+          // ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        backgroundColor: Colors.blueGrey,
+        selectedItemColor: color.IOColors.icon500,
         onTap: _onItemTapped,
       ),
     );

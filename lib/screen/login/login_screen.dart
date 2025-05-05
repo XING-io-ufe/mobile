@@ -19,19 +19,18 @@ class _LoginScreenState extends State<LoginScreen> {
         fit: StackFit.expand,
         children: [
           Image.asset('assets/images/login_backgound_image.png'),
-
-          // main content
+          // Main content
           Positioned(
             top: 120,
             left: 40,
             right: 40,
             child: Column(
               children: [
-                // logo
+                // Home logo
                 Image.asset('assets/images/logo_with_text.png'),
                 const SizedBox(height: 40),
 
-                // email field
+                // Email field
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   color: Colors.white70,
@@ -45,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 16),
 
-                // password field
+                // Password field
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 12),
                   color: Colors.white70,
@@ -59,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 8),
 
-                // remember + forgot
+                // Remember + Forgot
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -83,10 +82,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 24),
 
+                // Login button
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    // Login button expands to fill available width
                     SizedBox(
                       height: 48,
                       child: ElevatedButton(
@@ -108,7 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     SizedBox(width: 12),
 
-                    // QR code icon button
+                    // QR code and icon button
                     Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
@@ -122,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 SizedBox(height: 16),
 
-                // register link
+                // Register link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
