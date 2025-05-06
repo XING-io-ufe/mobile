@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/components/profile_item.dart';
 import 'package:flutter_application_2/theme/io_colors.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
-}
-
-class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/screen/tournament/tournament_screen.dart';
 import 'package:flutter_application_2/theme/io_colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('Tournament List'),
-                  SizedBox(height: 10),
+                  SizedBox(height: 15),
                   Stack(
                     clipBehavior: Clip.none,
                     children: [
@@ -118,32 +119,48 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 160,
                         decoration: BoxDecoration(
                           color: IOColors.text500,
-                          border: Border.all(
-                            width: 1,
-                            color: Color.fromARGB(128, 58, 58, 58),
-                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(205, 219, 219, 219),
+                              spreadRadius: 5,
+                              blurRadius: 5,
+                            ),
+                          ],
                           borderRadius: BorderRadius.all(Radius.circular(5)),
                         ),
                         child: Column(
                           children: [
                             SizedBox(height: 20),
-                            Container(
-                              height: 100,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                                image: DecorationImage(
-                                  image: AssetImage(
-                                    'assets/images/login_backgound_image.png',
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => TournamentScreen(),
                                   ),
-                                  fit: BoxFit.cover,
-                                ),
+                                );
+                              },
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 100,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(10),
+                                      ),
+                                      image: DecorationImage(
+                                        image: AssetImage(
+                                          'assets/images/login_backgound_image.png',
+                                        ),
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text('PUBG MOBILE'),
+                                ],
                               ),
                             ),
-                            SizedBox(height: 5),
-                            Text('PUBG MOBILE'),
                           ],
                         ),
                       ),
@@ -159,17 +176,79 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 239, 241, 68),
-                            border: Border.all(
-                              width: 1,
-                              color: Color.fromARGB(255, 238, 215, 13),
-                            ),
                             borderRadius: BorderRadius.all(Radius.circular(10)),
                           ),
                           alignment: Alignment.center,
-                          child: Text('not started', style: colors: Colors.white),
+                          child: Text(
+                            'not started',
+                            style: TextStyle(color: Colors.white),
+                          ),
                         ),
                       ),
                     ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('News'),
+                  Icon(
+                    Icons.keyboard_arrow_right,
+                    size: 24,
+                    color: Colors.grey[700],
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              SizedBox(
+                height: 175,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 300,
+                      decoration: BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      ),
+                      child: Center(
+                        child: Image.asset(
+                          'assets/images/logo_with_text.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 300,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        borderRadius: BorderRadius.all(Radius.circular(15)),
+                      ),
+                      child: Center(child: Text('Item 2')),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text('Match List'),
+                  Icon(
+                    Icons.keyboard_arrow_right,
+                    size: 24,
+                    color: Colors.grey[700],
                   ),
                 ],
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/screen/home/home_screen.dart';
 import 'package:flutter_application_2/screen/profile/profile_screen.dart';
-import 'package:flutter_application_2/theme/io_colors.dart' as color;
+import 'package:flutter_application_2/theme/io_colors.dart';
 // import 'package:flutter_application_2/screen/tournament/tournament_detail_screen.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
@@ -41,7 +41,7 @@ class _BottomNavigationBarExampleState
           // ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: color.IOColors.icon500,
+        selectedItemColor: IOColors.icon500,
         onTap: _onItemTapped,
       ),
     );
